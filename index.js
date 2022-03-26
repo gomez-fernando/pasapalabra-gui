@@ -62,7 +62,25 @@ let wrongAnswers = 0;
 let time = 240;
 const resetTime = time;
 let startButton = document.querySelector('#start');
-let model = letters[0];
+
+let bypassButton = document.querySelector("#bypass");
+
+let responseInput = document.querySelector('#answer');
+let responseButton = document.querySelector('#responseButton');
+let exitButton = document.querySelector('#exitButton');
+let answerInput = document.querySelector("#answer");
+
+responseInput.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    evalResponse();
+  }
+});   
+
+const bypass = () =>{
+  answerInput.value = "43598723497532717";
+  document.querySelector('#responseButton').click();
+};
 
 const generateRound = () =>  letters.forEach((el) => {
   let getRandom = Math.floor(Math.random() * el.definition.length);
@@ -74,42 +92,23 @@ const start = () => {
   startButton.addEventListener('click', newQuestion);
   startButton.addEventListener('click', countDown);
   startButton.addEventListener('click', () => {startButton.remove()});
-
+  bypassButton.addEventListener('click', bypass);
 }
+
 
 const newQuestion = () => {
   if(lettersForRound[indexLetters].status === 'pending'){
-    let writeQuestion = document.createElement('p');
-    writeQuestion.textContent = lettersForRound[indexLetters].definition;
+   
 
-    let responseInput = document.createElement('input');
-    responseInput.setAttribute('id', 'answer');
-    responseInput.classList.add('elem');
-
-    let responseButton = document.createElement('button');
-    responseButton.setAttribute('id', 'responseButton');
-    responseButton.textContent = 'OK';
-    responseButton.classList.add('inputsQuestion');
-
-    let exitButton = document.createElement('button');
-    exitButton.setAttribute('id', 'exitButton');
-    exitButton.textContent = 'TERMINAR PARTIDA';
-    exitButton.classList.add('inputsQuestion');
+    let displayQuestion = document.createElement('p');
+    displayQuestion.textContent = lettersForRound[indexLetters].definition;
 
     let definition = document.querySelector('#definitions');
-    definition.appendChild(writeQuestion);
-    definition.appendChild(responseInput);
-    definition.appendChild(responseButton);
-    definition.appendChild(exitButton);
+    definition.appendChild(displayQuestion);
     
     responseButton.addEventListener('click', evalResponse);
     exitButton.addEventListener('click',exit);
-    responseInput.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-          event.preventDefault();
-          responseButton.click();
-      }
-    });       
+   
   } else{
       indexLetters++;
 
@@ -121,13 +120,12 @@ const newQuestion = () => {
   }
 
   if(indexLetters <= (lettersForRound.length - 1)){
-      document.querySelector('#answer').focus(); 
+      responseInput.focus(); 
 
   }
 }
 
 const evalResponse = () => {
-  let responseInput = document.querySelector('#answer');
   let answer = responseInput.value;
   let definition = lettersForRound[indexLetters].word;
   let letter = document.querySelector(`#l-${lettersForRound[indexLetters].letter}`);
@@ -136,16 +134,19 @@ const evalResponse = () => {
   if(answer.toLowerCase() === definition){
     letter.classList.add("turnGreen");
     rightAnswers++;
-    delDefinition.innerHTML = '';
+    delDefinition.innerHTML = 'Correcto!';
     lettersForRound[indexLetters].status = 'done';
-  }else if(answer.toLowerCase() === 'pasapalabra'){
-    delDefinition.innerHTML = '';
+    answerInput.value = "";
+  }else if(answer === '43598723497532717'){
+    delDefinition.innerHTML = 'Has pedido "Pasapalabra"';
     lettersForRound[indexLetters].status = 'pending';
-  }else if(answer.toLowerCase() !== definition ){
+    answerInput.value = "";
+  }else{
     letter.classList.add("turnRed");
     wrongAnswers++;
     delDefinition.innerHTML = `La respuesta correcta es: ${definition}.`;
     lettersForRound[indexLetters].status = 'failed';
+    answerInput.value = "";
   }
 
   indexLetters++;
@@ -163,7 +164,7 @@ const exit = () => {
 
   let showScore = document.createElement('p');
   let showScore1 = document.createElement('p');
-  let writeTime = document.createElement('p');
+  let showTimeRemaining = document.createElement('p');
   let newGame = document.createElement('button');
 
   showScore.textContent = `Palabras acertadas: ${rightAnswers}`;
@@ -177,7 +178,7 @@ const exit = () => {
     ? tx1 = `segundo`
     : tx1 = `segundos`;
 
-    writeTime.textContent = `Tiempo restante: ${time + 1} ${tx1}.`;
+    showTimeRemaining.textContent = `Tiempo restante: ${time + 1} ${tx1}.`;
   }
 
   newGame.textContent = 'NUEVA PARTIDA';
@@ -185,7 +186,7 @@ const exit = () => {
 
   display.appendChild(showScore);
   display.appendChild(showScore1);
-  display.appendChild(writeTime);
+  display.appendChild(showTimeRemaining);
   display.appendChild(newGame);
 
   newGame.addEventListener('click', () => {
