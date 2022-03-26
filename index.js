@@ -1,58 +1,58 @@
 const letters = [
 
-  { letter: "a", word: ["abducir", "alcachofa", "ajo"], status: 0, question: ["CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien", "CON LA A. Planta comestible con tallos blancos y hojas verdes. También está en la ducha.", "CON LA A. Planta con raíz comestible, de color blanco y olor fuerte"]},
+  { letter: "a", word: ["abadía", "abandonar", "abecedario"], definition: ["Templo o monasterio que gobierna un abad o una abadesa.", "Dejar solo, sin atención, sin cuidados a una persona, un animal o una cosa.", "Conjunto de letras de un idioma ordenadas por orden alfabético."], status: 'pending'},
 
-  { letter: "b", word: ["bingo", "botiquin", "baston"], status: 0, question: ["CON LA B. Juego que ha sacado de quicio a todos los 'Skylabers' en las sesiones de precurso", "CON LA B. Caja en la que se guardan medicinas", "CON LA B. Palo de madera que sirve para apoyarse al andar"]},
+  { letter: "b", word: ["babor", "bacteria", "balón"], definition: ["Parte izquierda de un barco.", "Organismo muy pequeño que a veces produce enfermedades.", "Pelota grande llena de aire que sirve para jugar y practicar deportes."], status: 'pending'},
 
-  { letter: "c", word: ["churumbel", "camilla", "cactus"], status: 0, question: ["CON LA C. Niño, crío, bebé", "CON LA C. Cama en la que se llevan de un lado a otro heridos o enfermos", "CON LA C. Planta verde con muchas espinas"]},
+  { letter: "c", word: ["caña", "cabello", "cadena"], definition: ["Tallo hueco de las plantas.", "Conjunto de pelos de la cabeza de una persona.", "Conjunto de anillas o piezas de metal unidas."], status: 'pending'},
 
-  { letter: "d", word: ["diarrea", "dedicatoria", "danzar"], status: 0, question: ["CON LA D. Anormalidad en la función del aparato digestivo caracterizada por frecuentes evacuaciones y su consistencia líquida", "CON LA D. Palabras que se escriben y se dicen como regalo a alguien", "CON LA D. Moverse al ritmo de una música"]},
+  { letter: "d", word: ["débil", "debate", "decidir"], definition: ["Persona o cosa que tiene poca fuerza o poca resistencia.", "Discusión o intercambio de opiniones entre varias personas sobre un tema.", "Tomar una decisión."], status: 'pending'},
 
-  { letter: "e", word: ["ectoplasma", "empañar", "embudo"], status: 0, question: ["CON LA E. Gelatinoso y se encuentra debajo de la membrana plasmática. Los cazafantasmas medían su radiación", "CON LA E, Mancharse un cristal con el vapor de agua", "CON LA E. Objeto con forma de cono que se utiliza para pasar líquidos de un recipiente a otro"]},
+  { letter: "e", word: ["educación", "efectivo", "eficacia"], definition: ["Conjunto de conocimientos, habilidades y valores que las personas aprenden a lo largo de su vida.", "Dinero en metálico. Monedas y billetes.", "Capacidad de lograr el resultado que deseamos después de realizar una acción."], status: 'pending'},
 
-  { letter: "f", word: ["facil", "fabula", "fauces"], status: 0, question: ["CON LA F. Que no requiere gran esfuerzo, capacidad o dificultad", "CON LA F. Cuento en el que los personajes son animales, con el que se aprende algo a través de una moraleja", "CON LA F. Boca y dientes de animales muy fieros"]},
+  { letter: "f", word: ["fabada", "fachada", "dactible"], definition: ["Comida típica de Asturias que está hecha con fabas, chorizo, tocino y morcilla.", "Parte exterior de un edificio.", " Posible o que puede hacerse realidad."], status: 'pending'},
 
-  { letter: "g", word: ["galaxia", "guisar", "gatear"], status: 0, question: ["CON LA G. Conjunto enorme de estrellas, polvo interestelar, gases y partículas", "CON LA G. Preparar alimentos cocinándolos con calor", "CON LA G. Avanzar con las rodillas y las palmas de las manos"]},
+  { letter: "g", word: ["gabardina", "galleta", "gargantilla"], definition: ["Prenda de vestir impermeable. Es larga y cubre desde el cuello hasta las rodillas.", "Dulce que está hecho con harina, azúcar y huevo de formas diferetes y cocido en el horno.", "Collar corto. Suele ser ajustado alrededor del cuello."], status: 'pending'},
 
-  { letter: "h", word: ["harakiri", "hamaca", "hambre"], status: 0, question: ["CON LA H. Suicidio ritual japonés por desentrañamiento", "CON LA H. Tela resistente que se cuelga de sus extremos y se utiliza como cama", "CON LA H. Sensación que provocan las ganas de comer"]},
+  { letter: "h", word: ["habilidad", "habitación", "hablar"], definition: ["Cualidad de la persona que puede hacer cosas bien y con mucha facilidad.", "Parte de una vivienda o edificio que está separada de las demás por paredes.", "Comunicarse con alguien generalmente a través de palabras."], status: 'pending'},
 
-  { letter: "i", word: ["iglesia", "imperdible", "interruptor"], status: 0, question: ["CON LA I. Templo cristiano", "CON LA I. Alfiler que se abrocha quedando su punta dentro de un gancho", "CON LA I. Aparato que se usa para abrir o cerrar el paso de la corriente eléctrica"]},
+  { letter: "i", word: ["icono", "idea", "iglesia"], status: 'pending', definition: ["Dibujo que tiene un parecido con el objeto que representa.", "Imagen o representación de algo o alguien en la mente.", "Edificio al que las personas van a escuchar misa, a rezar o a celebrar actos religiosos."]},
 
-  { letter: "j", word: ["jabali", "jinete", "jungla"], status: 0, question: ["CON LA J. Variedad salvaje del cerdo que sale en la película 'El Rey León', de nombre Pumba", "CON LA J. Persona que monta a caballo", "CON LA J. Selva propia del clima tropical"]},
+  { letter: "j", word: ["jabalina", "jabón", "jactarse"], definition: ["Vara parecida a una lanza utilizada en competiciones deportivas.'Producto que sirve para lavar.", "Hablar bien de uno mismo, presumir o alardear de uno mismo por algo."], status: 'pending'},
 
-  { letter: "k", word: ["kamikaze", "karaoke", "ketchup"], status: 0, question: ["CON LA K. Persona que se juega la vida realizando una acción temeraria", "CON LA K. Diversión consistente en interpretar una canción grabada, mientras se sigue la letra que aparece en una pantalla", "CON LA K. Salsa de tomate condimentada con vinagre, azúcar y especias"]},
+  { letter: "k", word: ["karate", "kilómetro", "kiwi"], definition: ["Arte marcial japonés que consiste en dar golpes secos con los pies, los codos y el borde de la mano.", "Medida que sirve para medir la distancia entre dos lugares.", "Fruta con forma de huevo, de piel peluda de color marrón y carne comestible verde."], status: 'pending'},
 
-  { letter: "l", word: ["licantropo", "litera", "ladrillo"], status: 0, question: ["CON LA L. Hombre lobo", "CON LA L. Mueble formado por dos camas puestas una encima de la otra", "CON LA L. Pieza de arcilla con la que se construyen muros"]},
+  { letter: "l", word: ["laberinto", "laboratorio", "lactosa"], status: 'pending', definition: ["Lugar construido con muchas calles o pasillos que se cruzan y en el que es muy difícil orientarse.", "Lugar en el que se hacen experimentos y trabajos generalmente relacionados con la ciencia.", "Azúcar que tiene la leche de forma natural."]},
 
-  { letter: "m", word: ["misantropo", "mayonesa", "manada"], status: 0, question: ["CON LA M. Persona que huye del trato con otras personas o siente gran aversión hacia ellas", "CON LA M. Salsa que se hace batiendo huevo y aceite", "CON LA M. Grupo de animales de la misma especie que van juntos"]},
+  { letter: "m", word: ["maíz", "mañana", "madriguera"], definition: ["Planta de tallo largo y hojas grandes. La mazorca es la parte comestible de la planta.", "Día siguiente al de hoy.", "Cueva donde viven y se esconden algunos animales, como los conejos."], status: 'pending'},
 
-  { letter: "n", word: ["necedad", "nuca", "nana"], status: 0, question: ["CON LA N. Demostración de poca inteligencia", "CON LA N. Parte posterior de la cabeza situada encima del cuello", "CON LA N. Canción de cuna que se canta a los bebés para que se duerman"]},
+  { letter: "n", word: ["nacionalidad", "nadar", "negociar"], definition: ["Pertenencia de una persona a una nación.", "Avanzar en el agua moviendo el cuerpo y sin apoyos.", "Discutir las condiciones de un asunto o acuerdo."], status: 'pending'},
 
-  { letter: "ñ", word: ["señal", "teñir", "gruñido"], status: 0, question: ["CONTIENE LA Ñ. Indicio que permite deducir algo de lo que no se tiene un conocimiento directo.", "CONTIENE LA Ñ. Dar color al pelo con un tinte especial, permanente o que se va tras algunos lavados", "CONTIENE LA Ñ.  Sonido que hace el cerdo"]},
+  { letter: "ñ", word: ["ñoñería", "ñoño", "ñu"], status: 'pending', definition: ["Acción o palabra ñoña.", "Algo soso o con poca gracia.", " Animal mamífero d gran tamaño, con cabeza de toro. Tiene pelo pardo o gris y una larga cola."]},
 
-  { letter: "o", word: ["orco", "orilla", "oculista"], status: 0, question: ["CON LA O. Humanoide fantástico de apariencia terrible y bestial, piel de color verde creada por el escritor Tolkien", "CON LA O. Borde del mar, de un lago o de un río", "CON LA O. Médico especialista en las enfermedades de los ojos"]},
+  { letter: "o", word: ["obedecer", "oferta", "orar"], status: 'pending', definition: ["Hacer caso a lo que dice u ordena una ley o una persona.", "Venta de algo por un precio más barato de lo normal.", "Rezar, pedir o dar gracias a Dios."]},
 
-  { letter: "p", word: ["protoss", "planchar", "pesadilla"], status: 0, question: ["CON LA P. Raza ancestral tecnológicamente avanzada que se caracteriza por sus grandes poderes psíonicos del videojuego StarCraft", "CON LA P. Quitar las arrugar a una prenda", "CON LA P. Sueño que produce angustia o temor"]},
+  { letter: "p", word: ["paciencia", "padrón", "pavimento"], definition: ["Capacidad de aguantar situaciones desagradables, dolorosas, ofensivas o pesadas sin quejarse.", "Censo, lista de ciudadanos registrados en un pueblo o ciudad.", "Superficie lisa que cubre el suelo de calles y carreteras."], status: 'pending'},
 
-  { letter: "q", word: ["queso", "quitamanchas", "quirofano"], status: 0, question: ["CON LA Q. Producto obtenido por la maduración de la cuajada de la leche", "CON LA Q. Producto natural o preparado que sirve para quitar manchas", "CON LA Q. Habitación de hospital donde los médicos realizan las operaciones"]},
+  { letter: "q", word: ["quebrar", "quimera", "quinteto"], definition: ["Romper algo de forma violenta.", "Cosa que alguien imagina que es posible o real, pero no lo es.", "Grupo de 5 personas o cosas."], status: 'pending'},
 
-  { letter: "r", word: ["raton", "racimo", "raiz"], status: 0, question: ["CON LA R. Roedor", "CON LA R. Conjunto de uvas sostenidas en un mismo tallo", "CON LA R. Parte por la que se alimenta una planta, que está bajo tierra"]},
+  { letter: "r", word: ["raíz", "rabia", "racimo"], definition: ["Parte de la planta que crece bajo tierra. ", "Enfermedad que sufren algunos animales, como los perros, los murciélagos o los gatos.", "Conjunto de frutas que cuelgan de un solo tallo."], status: 'pending'},
 
-  { letter: "s", word: ["stackoverflow", "sembrar", "susurrar"], status: 0, question: ["CON LA S. Comunidad salvadora de todo desarrollador informático", "CON LA S. Enterrar semillas en la tierra para que crezcan", "CON LA S. Hablar muy bajito"]},
+  { letter: "s", word: ["sabor", "sacacorchos", "símbolo"], definition: ["Cualidad de las sustancias o los alimentos que se nota a través del gusto en la lengua.", "Utensilio de metal que sirve para quitar los tapones de corcho a las botellas.", "Signo, dibujo u objeto que sirve para representar una idea."], status: 'pending'},
 
-  { letter: "t", word: ["terminator", "taburete", "talon"], status: 0, question: ["CON LA T. Película del director James Cameron que consolidó a Arnold Schwarzenegger como actor en 1984", "CON LA T. Asiento sin respaldo", "CON LA T. Parte posterior del pie de una persona"]},
+  { letter: "t", word: ["tahona", "tambor", "tapa"], definition: ["Sitio donde los panaderos hacen el pan.", "Instrumento musical de percusión. Está formado por una caja cerrada con cuero tensado.", "Pieza que sirve para cerrar o cubrir un bote o una caja."], status: 'pending'},
 
-  { letter: "u", word: ["unamuno", "untar", "umbral"], status: 0, question: ["CON LA U. Escritor y filósofo español de la generación del 98 autor del libro 'Niebla' en 1914", "CON LA U. Extender mantequilla sobre una rebanada de pan", "CON LA U. Parte inferior de una puerta"]},
+  { letter: "u", word: ["unicornio", "unificar", "urano"], definition: ["Animal imaginario parecido al caballo con un cuerno en la frente.", "Unir cosas que están separadas para lograr una sola.", "Séptimo planeta del sistema solar. Tiene un sistema de anillos a su alrededor y muchos satélites."], status: 'pending'},
 
-  { letter: "v", word: ["vikingos", "vecino", "vacaciones"], status: 0, question: ["CON LA V. Nombre dado a los miembros de los pueblos nórdicos originarios de Escandinavia, famosos por sus incursiones y pillajes en Europa", "CON AL V. Persona que vive en el mismo barrio o edificio que otra", "CON LA V. Tiempo de descanso en el que las personas no trabajan o no van al colegio"]},
+  { letter: "v", word: ["vacaciones", "valle", "verificar"], definition: ["Tiempo de descanso de una actividad habitual, como el trabajo o los estudios.", "Terreno llano que hay entre las montañas.", "CON LA V. Comprobar que algo es verdadero o exacto."], status: 'pending'},
 
-  { letter: "w", word: ["sandwich", "wifi", "walabi"], status: 0, question: ["CONTIENE LA W. Emparedado hecho con dos rebanadas de pan entre las cuales se coloca jamón y queso", "CON LA W. Sistema de conexión inalámbrica para conectarse a internet", "CON LA W. Animal marsupial que habita en Australia. Se parece al canguro pero es de menor tamaño"]},
+  { letter: "w", word: ["web", "whisky", "waterpolo"], definition: ["Red informática en la que hay mucha información repartida en páginas y sitios.", "Bebida alcohólica fuerte y de color marrón.", "Deporte de piscina en el que dos equipos tratan de marcar goles en la portería contraria."], status: 'pending'},
 
-  { letter: "x", word: ["botox", "fenix", "extremidades"], status: 0, question: ["CONTIENE LA X. Toxina bacteriana utilizada en cirujía estética", "CONTIENE LA X. Ave fabulosa que los antiguos creyeron que era única y renacía de sus cenizas", "CONTIENE LA X. Órganos externos, articulados con el tronco, que cumplen funciones de locomoción, vuelo o manipulación de objetos en los animales"]},
+  { letter: "x", word: ["xenofobia", "xerografía", "xilófono"], definition: ["Odio a los extranjeros o a las cosas de otros países.", "Proceso de copia de un texto o una imagen en papel mediante una máquina.", "Instrumento musical formado por listones de madera o metal de diferentes tamaños."], status: 'pending'},
   
-  { letter: "y", word: ["peyote", "yunque", "yegua"], status: 0, question: ["CONTIENE LA Y. Pequeño cáctus conocido por sus alcaloides psicoactivos utilizado de forma ritual y medicinal por indígenas americanos", "CON LA Y. Hueso que se encuentra dentro del oído, situado entre el martillo y el estribo", "CON LA Y. Hembra del caballo"]},
+  { letter: "y", word: ["yacimiento", "yate", "yegua"], definition: ["Lugar en el que hay gran cantidad de un mineral, una roca o restos de antiguas culturas.", "Embarcación de recreo.", "Hembra del caballo."], status: 'pending'},
   
-  { letter: "z", word: ["zen", "zumbido", "zurdo"], status: 0, question: ["CON LA Z. Escuela de budismo que busca la experiencia de la sabiduría más allá del discurso racional", "CON LA Z. Sonido que producen algunos insectos como la abeja o el mosquito", "CON LA Z. Persona que habitualmente utiliza su mano o pie izquierdos"]} 
+  { letter: "z", word: ["zafiro", "zaga", "zanahoria"], definition: ["Piedra preciosa de color azul. Es tan valiosa como los diamantes.", "Parte posterior de algo. Por ejemplo de un coche.", "Planta con flores blancas y moradas. Tiene una raíz de color naranja que es comestible."], status: 'pending'} 
 ];
 
 let lettersForRound = [];
@@ -61,13 +61,12 @@ let rightAnswers = 0;
 let wrongAnswers = 0;
 let time = 240;
 const resetTime = time;
-let startButton = document.querySelector('#play');
-// let preventDisplay = false;
+let startButton = document.querySelector('#start');
 let model = letters[0];
 
 const generateRound = () =>  letters.forEach((el) => {
-  let getRandom = Math.floor(Math.random() * el.question.length);
-  lettersForRound.push({letter: el.letter, word: el.word[getRandom], question: el.question[getRandom], status: el.status});    
+  let getRandom = Math.floor(Math.random() * el.definition.length);
+  lettersForRound.push({letter: el.letter, word: el.word[getRandom], definition: el.definition[getRandom], status: el.status});    
 });
 
 const start = () => {
@@ -79,38 +78,33 @@ const start = () => {
 }
 
 const newQuestion = () => {
-  if(lettersForRound[indexLetters].status === 0){
-      // startButton.remove()
-
+  if(lettersForRound[indexLetters].status === 'pending'){
     let writeQuestion = document.createElement('p');
-    writeQuestion.textContent = lettersForRound[indexLetters].question;
+    writeQuestion.textContent = lettersForRound[indexLetters].definition;
 
-    let answerWrite = document.createElement('input');
-    answerWrite.setAttribute('id', 'answer');
-    answerWrite.classList.add('placeholder');
+    let responseInput = document.createElement('input');
+    responseInput.setAttribute('id', 'answer');
+    responseInput.classList.add('elem');
 
     let responseButton = document.createElement('button');
     responseButton.setAttribute('id', 'responseButton');
-    responseButton.textContent = 'ENVIAR';
+    responseButton.textContent = 'OK';
     responseButton.classList.add('inputsQuestion');
 
     let exitButton = document.createElement('button');
     exitButton.setAttribute('id', 'exitButton');
-    exitButton.textContent = 'SALIR';
+    exitButton.textContent = 'TERMINAR PARTIDA';
     exitButton.classList.add('inputsQuestion');
 
-    // let letter = document.querySelector(`#l-${indexLetters}`);
-    // letter.classList.add("focusLetter");
-
-    let question = document.querySelector('#questions');
-    question.appendChild(writeQuestion);
-    question.appendChild(answerWrite);
-    question.appendChild(responseButton);
-    question.appendChild(exitButton);
+    let definition = document.querySelector('#definitions');
+    definition.appendChild(writeQuestion);
+    definition.appendChild(responseInput);
+    definition.appendChild(responseButton);
+    definition.appendChild(exitButton);
     
     responseButton.addEventListener('click', evalResponse);
     exitButton.addEventListener('click',exit);
-    answerWrite.addEventListener("keyup", function(event) {
+    responseInput.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
           event.preventDefault();
           responseButton.click();
@@ -133,27 +127,25 @@ const newQuestion = () => {
 }
 
 const evalResponse = () => {
-  let answerWrite = document.querySelector('#answer');
-  let wordSave = answerWrite.value;
-  let wordList = lettersForRound[indexLetters].word;
+  let responseInput = document.querySelector('#answer');
+  let answer = responseInput.value;
+  let definition = lettersForRound[indexLetters].word;
   let letter = document.querySelector(`#l-${lettersForRound[indexLetters].letter}`);
-  let cleanQuestion = document.querySelector('#questions');
-  // preventDisplay = false;
-  // stop = true;
+  let delDefinition = document.querySelector('#definitions');
 
-  if(wordSave.toLowerCase() === wordList){
+  if(answer.toLowerCase() === definition){
     letter.classList.add("turnGreen");
     rightAnswers++;
-    cleanQuestion.innerHTML = '';
-    lettersForRound[indexLetters].status = 1;
-  }else if(wordSave.toLowerCase() === 'pasapalabra'){
-    cleanQuestion.innerHTML = '';
-    lettersForRound[indexLetters].status = 0;
-  }else if(wordSave.toLowerCase() !== wordList ){
+    delDefinition.innerHTML = '';
+    lettersForRound[indexLetters].status = 'done';
+  }else if(answer.toLowerCase() === 'pasapalabra'){
+    delDefinition.innerHTML = '';
+    lettersForRound[indexLetters].status = 'pending';
+  }else if(answer.toLowerCase() !== definition ){
     letter.classList.add("turnRed");
     wrongAnswers++;
-    cleanQuestion.innerHTML = `La respuesta correcta es: ${wordList}.`;
-    lettersForRound[indexLetters].status = -1;
+    delDefinition.innerHTML = `La respuesta correcta es: ${definition}.`;
+    lettersForRound[indexLetters].status = 'failed';
   }
 
   indexLetters++;
@@ -166,14 +158,16 @@ const evalResponse = () => {
 };
 const exit = () => {
   clearInterval(timing);
-  let showRightAnswers = document.querySelector('#questions');
-  showRightAnswers.innerHTML = '';
+  let display = document.querySelector('#definitions');
+  display.innerHTML = '';
 
-  let writeResults = document.createElement('p');
+  let showScore = document.createElement('p');
+  let showScore1 = document.createElement('p');
   let writeTime = document.createElement('p');
-  let playAgain = document.createElement('responseButton');
+  let newGame = document.createElement('button');
 
-  writeResults.textContent = `Letras acertadas: ${rightAnswers}`;
+  showScore.textContent = `Palabras acertadas: ${rightAnswers}`;
+  showScore1.textContent = `Palabras incorrectas: ${wrongAnswers}`;
 
   if(time === -1){
     alert("Se ha agotado el tiempo :(")
@@ -186,92 +180,46 @@ const exit = () => {
     writeTime.textContent = `Tiempo restante: ${time + 1} ${tx1}.`;
   }
 
-  playAgain.textContent = 'JUGAR OTRA VEZ';
-  playAgain.classList.add('placeholder');
+  newGame.textContent = 'NUEVA PARTIDA';
+  newGame.classList.add('elem');
 
-  showRightAnswers.appendChild(writeResults);
-  showRightAnswers.appendChild(writeTime);
-  showRightAnswers.appendChild(playAgain);
+  display.appendChild(showScore);
+  display.appendChild(showScore1);
+  display.appendChild(writeTime);
+  display.appendChild(newGame);
 
-  playAgain.addEventListener('click', () => {
-    let div = document.querySelector('#questions');
+  newGame.addEventListener('click', () => {
+    let div = document.querySelector('#definitions');
     div.textContent = '';
   });
 
   rightAnswers = 0;
   wrongAnswers = 0;
-  playAgain.addEventListener('click', reStart);
+  newGame.addEventListener('click', reStart);
 }
 
 const newRound = () => {
 if((rightAnswers + wrongAnswers) === letters.length){
   exit();
 } else {
-    // lettersForRound.map(function (word){
-    //   // if(word.status === 0){
-    //   if(word.status === 0 && waitToCheck === false){
-    //     indexLetters = lettersForRound.indexOf(word);
-    //     waitToCheck = true;
-    //     newQuestion();
-    //   }     
-    // });
-
-    //----------------
-    // for(let i = 0; i < lettersForRound.length; i++){
-    //   if(lettersForRound[i].status === 0 && preventDisplay === false){
-    //   // if(lettersForRound[i].status === 0 && (rightAnswers + wrongAnswers) < letters.length){
-    //     indexLetters = i;
-    //     // waitToCheck = true;
-    //     preventDisplay = true;
-    //     alert("linea 221")
-    //     newQuestion();
-    //   }
-    // }
-
-    // alert("230")
     indexLetters = 0;
-    // console.log(indexLetters)
-
-    // newLetForR = [];
-
-    // generateRound();
     let newLetForR = [];
 
-    // for(let i = 0; i < lettersForRound.length; i++){
-    //   if(lettersForRound[i].status === 0){
-    //     let getRandom = Math.floor(Math.random() * model.question.length);
-    //     newLetForR.push({word: lettersForRound[i].word[getRandom], question: lettersForRound[i].question[getRandom], status: lettersForRound[i].status});
-    //   }
-    // };
-
     lettersForRound.forEach((el) => {
-      // console.log(el)
-      if(el.status === 0){
-        // let getRandom = Math.floor(Math.random() * model.question.length);
-      newLetForR.push({letter: el.letter, word: el.word, question: el.question, status: el.status}); 
+      if(el.status === 'pending'){
+      newLetForR.push({letter: el.letter, word: el.word, definition: el.definition, status: el.status}); 
       }
     });
-
-    // lettersForRound = [];
 
     lettersForRound = newLetForR;
 
     newQuestion();
-
-    //----------------
 }
 };
 
 const reStart = () => {
   lettersForRound = [];
-
   generateRound();
-
-  // for(let i = 0; i < letters.length ; i++){
-  //   let circle = document.querySelector(`#l-${i}`);
-  //   circle.classList.remove('turnGreen');
-  //   circle.classList.remove('turnRed');
-  // }
 
   let letters = document.querySelectorAll('.letter');
 
@@ -279,8 +227,6 @@ const reStart = () => {
     el.classList.remove('turnGreen');
     el.classList.remove('turnRed');
   })
-// circle.classList.remove('turnGreen');
-// circle.classList.remove('turnRed');
 
   time = resetTime;
   indexLetters = 0;
