@@ -77,11 +77,18 @@ let correct = document.querySelector('#correct');
 let countd = document.querySelector('#countdown');
 let butts = document.querySelector('#butts');
 let dindon = document.querySelector('#dindon');
+let gamep = document.querySelector('.game > p');
 
-responseInput.addEventListener("keyup", (e) => {
+document.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     e.preventDefault();
     evalResponse();
+  } else if(e.keyCode === 32){
+    e.preventDefault();
+    bypass();
+  } else if(e.keyCode === 27){
+    e.preventDefault();
+    exit();
   }
 });   
 
@@ -107,6 +114,8 @@ const start = () => {
 
 const newQuestion = () => {
   if(lettersForRound[indexLetters].status === 'pending'){
+    gamep.classList.add('font-12');
+
     responseInput.focus();
 
     let text1 = `Con la '${lettersForRound[indexLetters].letter.toUpperCase()}':<br/>
