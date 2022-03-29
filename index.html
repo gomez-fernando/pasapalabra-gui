@@ -1,64 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasapalabra</title>
-    <link rel="stylesheet" href="./index.css"> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasapalabra</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-    <div class="rosco">
-        <ul class="circle">
-            <div id="countdown" class="countdown"></div>
-            <li id="l-a" class="a letter">A</li>
-            <li id="l-b" class="b letter">B</li>
-            <li id="l-c" class="c letter">C</li>
-            <li id="l-d" class="d letter">D</li>
-            <li id="l-e" class="e letter">E</li>
-            <li id="l-f" class="f letter">F</li>
-            <li id="l-g" class="g letter">G</li>
-            <li id="l-h" class="h letter">H</li>
-            <li id="l-i" class="i letter">I</li>
-            <li id="l-j" class="j letter">J</li>
-            <li id="l-k" class="k letter">K</li>
-            <li id="l-l" class="l letter">L</li>
-            <li id="l-m" class="m letter">M</li>
-            <li id="l-n" class="n letter">N</li>
-            <li id="l-ñ" class="ñ letter">Ñ</li>
-            <li id="l-o" class="o letter">O</li>
-            <li id="l-p" class="p letter">P</li>
-            <li id="l-q" class="q letter">Q</li>
-            <li id="l-r" class="r letter">R</li>
-            <li id="l-s" class="s letter">S</li>
-            <li id="l-t" class="t letter">T</li>
-            <li id="l-u" class="u letter">U</li>
-            <li id="l-v" class="v letter">V</li>
-            <li id="l-w" class="w letter">W</li>
-            <li id="l-x" class="x letter">X</li>
-            <li id="l-y" class="y letter">Y</li>
-            <li id="l-z" class="z letter">Z</li>
-        </ul>
-</div>
-    <div class="welcome">
-        <h2>BIENVENIDO AL JUEGO DE PASAPALABRA DE ISDI CODERS</h2>
-        <p>Basado en el exitoso concurso de television Pasapalabra.Las normas son sencillas: <br> 
-        Se mostraran unas definiciones por pantallay el usuario debera respopnder con la palabra correspondiente. El usuario tiene la opcion de decir <strong>pasapalabra</strong> y dejar esa definicion para mas adelante. <br>
-    el programa es sensible a las acentuaciones, asi que se debe introducir la palabra sin tilde. Es posible utilizar la tecla ENTER para enviar la palabra.</p>
-    <button class="start" id="start">JUGAR</button>
-   
-    <div id="definitions" class="definitions">
+  <div class="first">
+    <div class="main">
+      <div id="dindon" class="circle">🔔</div>
+      <div id="l-a" class="circle">A</div>
+      <div id="l-b" class="circle">B</div>
+      <div id="l-c" class="circle">C</div>
+      <div id="l-d" class="circle">D</div>
+      <div id="l-e" class="circle">E</div>
+      <div id="l-f" class="circle">F</div>
+      <div id="l-g" class="circle">G</div>
+      <div id="l-h" class="circle">H</div>
+      <div id="l-i" class="circle">I</div>
+      <div id="l-j" class="circle">J</div>
+      <div id="l-k" class="circle">K</div>
+      <div id="l-l" class="circle">L</div>
+      <div id="l-m" class="circle">M</div>
+      <div id="l-n" class="circle">N</div>
+      <div id="l-ñ" class="circle">Ñ</div>
+      <div id="l-o" class="circle">O</div>
+      <div id="l-p" class="circle">P</div>
+      <div id="l-q" class="circle">Q</div>
+      <div id="l-r" class="circle">R</div>
+      <div id="l-s" class="circle">S</div>
+      <div id="l-t" class="circle">T</div>
+      <div id="l-u" class="circle">U</div>
+      <div id="l-v" class="circle">V</div>
+      <div id="l-w" class="circle">W</div>
+      <div id="l-x" class="circle">X</div>
+      <div id="l-y" class="circle">Y</div>
+      <div id="l-z" class="circle">Z</div>
+  
+      <div id="scores">
+        <div id="score1" >Palabras acertadas: 0</div>
+        <div id="score2">Palabras erradas: 0</div>
+        <div id="correct"></div>
+      </div>
+  
+  
+  
     </div>
-    
-    <div>
-        <input type="text" id="answer" class="elem">
-        <button id="responseButton" class="inputsQuestion">Ok</button>
-        <button id="bypass" class="inputsQuestion">Pasapalabra</button>
-        <button id="exitButton" class="inputsQuestion">Terminar partida</button>
+  </div>
+
+  <!-- </div> -->
+  <div class="second">
+    <div class="game">
+      <h1>BIENVENIDO a la Gran Final de PASAPALABRA !!</h1>
+      <h2>🔥 by ISDI Coders 🚀</h2>
+      <p>Basado en el exitoso concurso de televisión Pasapalabra de Telecinco.<br>
+        Las normas son sencillas: <br>
+        Se mostrarán unas definiciones por pantalla y tienes que responder con la palabra correcta. <br>
+        Tienes la opción de pulsar el botón <strong>Pasapalabra</strong> y dejar esa pregunta para la siguiente ronda.<br>
+        Puedes escribir con mayúsculas o minúsculas, respetando los acentos.<br>
+        Puedes enviar la palabra con el botón Ok o usando Enter.<br>
+        Si se termina el tiempo habrá terminado la partida.
+      </p>
+      <button class="start button" id="start">Vamos allá !!</button>
+
+      <!-- <div id="fields" class=""> -->
+      <div id="fields" class="display-no">
+        <div id="definitions" class="definitions">
+        </div>
+  
+        <div>
+          <input type="text" id="answer" class="elem">
+        </div>
+  
+        <div id="butts">
+          
+          <button id="bypass" class="button inputsQuestion">Pasapalabra</button>
+          <button id="responseButton" class="button inputsQuestion">Ok</button>
+          <button id="exitButton" class="button inputsQuestion">Terminar partida</button>
+        </div>
+
+        <div id="countdown" class="countdown"></div>
+
+      </div>
+
     </div>
 
-    
-</div>
-<script src="./index.js"></script>  
+<!-- todo revisar que no coincidan palabras como definitions -->
+
+  </div>
+  <script src="./index.js"></script>
 </body>
+
 </html>

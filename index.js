@@ -10,7 +10,7 @@ const letters = [
 
   { letter: "e", word: ["educación", "efectivo", "eficacia"], definition: ["Conjunto de conocimientos, habilidades y valores que las personas aprenden a lo largo de su vida.", "Dinero en metálico. Monedas y billetes.", "Capacidad de lograr el resultado que deseamos después de realizar una acción."], status: 'pending'},
 
-  { letter: "f", word: ["fabada", "fachada", "dactible"], definition: ["Comida típica de Asturias que está hecha con fabas, chorizo, tocino y morcilla.", "Parte exterior de un edificio.", " Posible o que puede hacerse realidad."], status: 'pending'},
+  { letter: "f", word: ["fabada", "fachada", "factible"], definition: ["Comida típica de Asturias que está hecha con fabas, chorizo, tocino y morcilla.", "Parte exterior de un edificio.", " Posible o que puede hacerse realidad."], status: 'pending'},
 
   { letter: "g", word: ["gabardina", "galleta", "gargantilla"], definition: ["Prenda de vestir impermeable. Es larga y cubre desde el cuello hasta las rodillas.", "Dulce que está hecho con harina, azúcar y huevo de formas diferetes y cocido en el horno.", "Collar corto. Suele ser ajustado alrededor del cuello."], status: 'pending'},
 
@@ -59,7 +59,7 @@ let lettersForRound = [];
 let indexLetters = 0;
 let rightAnswers = 0;
 let wrongAnswers = 0;
-let time = 240;
+let time = 180;
 const resetTime = time;
 let startButton = document.querySelector('#start');
 
@@ -69,6 +69,14 @@ let responseInput = document.querySelector('#answer');
 let responseButton = document.querySelector('#responseButton');
 let exitButton = document.querySelector('#exitButton');
 let answerInput = document.querySelector("#answer");
+let score1 = document.querySelector("#score1");
+let score2 = document.querySelector("#score2");
+
+let fields = document.querySelector('#fields');
+let correct = document.querySelector('#correct');
+let countd = document.querySelector('#countdown');
+let butts = document.querySelector('#butts');
+let dindon = document.querySelector('#dindon');
 
 responseInput.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) {
@@ -78,7 +86,7 @@ responseInput.addEventListener("keyup", (e) => {
 });   
 
 const bypass = () =>{
-  answerInput.value = "43598723497532717";
+  answerInput.value = "43598723&%$497532717";
   document.querySelector('#responseButton').click();
 };
 
@@ -92,16 +100,20 @@ const start = () => {
   startButton.addEventListener('click', newQuestion);
   startButton.addEventListener('click', countDown);
   startButton.addEventListener('click', () => {startButton.remove()});
+  startButton.addEventListener('click', () => {fields.classList.remove('display-no')});
   bypassButton.addEventListener('click', bypass);
 }
 
 
 const newQuestion = () => {
   if(lettersForRound[indexLetters].status === 'pending'){
-   
+    responseInput.focus();
+
+    let text1 = `Con la '${lettersForRound[indexLetters].letter.toUpperCase()}':<br/>
+                  ${lettersForRound[indexLetters].definition}`;
 
     let displayQuestion = document.createElement('p');
-    displayQuestion.textContent = lettersForRound[indexLetters].definition;
+    displayQuestion.innerHTML = text1;
 
     let definition = document.querySelector('#definitions');
     definition.appendChild(displayQuestion);
@@ -118,11 +130,6 @@ const newQuestion = () => {
           newRound();
       }
   }
-
-  if(indexLetters <= (lettersForRound.length - 1)){
-      responseInput.focus(); 
-
-  }
 }
 
 const evalResponse = () => {
@@ -132,21 +139,54 @@ const evalResponse = () => {
   let delDefinition = document.querySelector('#definitions');
 
   if(answer.toLowerCase() === definition){
-    letter.classList.add("turnGreen");
+    letter.classList.remove("white");
+    letter.classList.add("success");
+    letter.classList.add('shad1');
+
     rightAnswers++;
-    delDefinition.innerHTML = 'Correcto!';
+
+    correct.classList.remove('display-no');
+    correct.classList.remove('correct-e');
+    correct.classList.remove('correct-p');
+    correct.classList.add('correct-c');
+    correct.innerHTML = `<h3>Correcto!<h3/>`;
+
+    delDefinition.innerHTML = '';
+
     lettersForRound[indexLetters].status = 'done';
     answerInput.value = "";
-  }else if(answer === '43598723497532717'){
+    score1.innerHTML = `Palabras acertadas: ${rightAnswers}`;
+  }else if(answer === '43598723&%$497532717'){
+    letter.classList.add("white");
+    correct.innerHTML = `<h3>Has pedido Pasapalabra<h3/>`;
+
+    correct.classList.remove('display-no');
+    correct.classList.remove('correct-e');
+    correct.classList.remove('correct-c');
+    correct.classList.add('correct-p');
     delDefinition.innerHTML = 'Has pedido "Pasapalabra"';
     lettersForRound[indexLetters].status = 'pending';
+    delDefinition.innerHTML = '';
     answerInput.value = "";
   }else{
-    letter.classList.add("turnRed");
+    letter.classList.remove("white");
+    letter.classList.add("error");
+    letter.classList.add('shad1');
     wrongAnswers++;
-    delDefinition.innerHTML = `La respuesta correcta es: ${definition}.`;
     lettersForRound[indexLetters].status = 'failed';
+    delDefinition.innerHTML = '';
+
+    correct.innerHTML = `<h3>Has pedido Pasapalabra<h3/>`;
+
     answerInput.value = "";
+    score2.innerHTML = `Palabras erróneas: ${wrongAnswers}`;
+    
+    correct.classList.remove('display-no');
+    correct.classList.remove('correct-c');
+    correct.classList.remove('correct-p');
+    correct.classList.add('correct-e');
+
+    correct.innerHTML = `<h3>La respuesta correcta era: ${definition}<h3/>`;
   }
 
   indexLetters++;
@@ -162,16 +202,13 @@ const exit = () => {
   let display = document.querySelector('#definitions');
   display.innerHTML = '';
 
-  let showScore = document.createElement('p');
-  let showScore1 = document.createElement('p');
   let showTimeRemaining = document.createElement('p');
   let newGame = document.createElement('button');
 
-  showScore.textContent = `Palabras acertadas: ${rightAnswers}`;
-  showScore1.textContent = `Palabras incorrectas: ${wrongAnswers}`;
-
   if(time === -1){
-    alert("Se ha agotado el tiempo :(")
+    dindon.classList.add('error');
+    dindon.classList.add('shad1');
+    alert("Se ha agotado el tiempo :(");
   }else{
     let tx1;
     (time === 1)
@@ -182,12 +219,21 @@ const exit = () => {
   }
 
   newGame.textContent = 'NUEVA PARTIDA';
-  newGame.classList.add('elem');
+  newGame.classList.add('button');
 
-  display.appendChild(showScore);
-  display.appendChild(showScore1);
   display.appendChild(showTimeRemaining);
   display.appendChild(newGame);
+
+  correct.classList.remove('correct-c');
+  correct.classList.remove('correct-p');
+  correct.classList.remove('correct-e');
+  correct.classList.add('correct-end');
+
+  countd.classList.add('display-no');
+  butts.classList.add('display-no');
+  answerInput.classList.add('display-no');
+
+  correct.innerHTML = `<h3>Fin de la partida<h3/>`;
 
   newGame.addEventListener('click', () => {
     let div = document.querySelector('#definitions');
@@ -222,12 +268,30 @@ const reStart = () => {
   lettersForRound = [];
   generateRound();
 
-  let letters = document.querySelectorAll('.letter');
+  let letters = document.querySelectorAll('.circle');
 
   letters.forEach((el) => {
-    el.classList.remove('turnGreen');
-    el.classList.remove('turnRed');
+    el.classList.remove('success');
+    el.classList.remove('error');
+    el.classList.remove('white');
+    el.classList.remove('shad1');
   })
+
+  correct.classList.remove('correct-c');
+  correct.classList.remove('correct-p');
+  correct.classList.remove('correct-e');
+  correct.classList.remove('correct-end');
+  correct.classList.add('display-no');
+
+  countd.classList.remove('display-no');
+  butts.classList.remove('display-no');
+  answerInput.classList.remove('display-no');
+
+  score1.innerHTML = `Palabras acertadas: 0`;
+  score2.innerHTML = `Palabras erradas: 0`;
+
+  dindon.classList.remove('error');
+  dindon.classList.remove('shad1');
 
   time = resetTime;
   indexLetters = 0;
