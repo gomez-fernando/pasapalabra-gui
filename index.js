@@ -18,7 +18,7 @@ const letters = [
 
   { letter: "i", word: ["icono", "idea", "iglesia"], status: 'pending', definition: ["Dibujo que tiene un parecido con el objeto que representa.", "Imagen o representación de algo o alguien en la mente.", "Edificio al que las personas van a escuchar misa, a rezar o a celebrar actos religiosos."]},
 
-  { letter: "j", word: ["jabalina", "jabón", "jactarse"], definition: ["Vara parecida a una lanza utilizada en competiciones deportivas.'Producto que sirve para lavar.", "Hablar bien de uno mismo, presumir o alardear de uno mismo por algo."], status: 'pending'},
+  { letter: "j", word: ["jabalina", "jabón", "jactarse"], definition: ["Vara parecida a una lanza utilizada en competiciones deportivas.", "Producto que sirve para lavar.", "Hablar bien de uno mismo, presumir o alardear de uno mismo por algo."], status: 'pending'},
 
   { letter: "k", word: ["karate", "kilómetro", "kiwi"], definition: ["Arte marcial japonés que consiste en dar golpes secos con los pies, los codos y el borde de la mano.", "Medida que sirve para medir la distancia entre dos lugares.", "Fruta con forma de huevo, de piel peluda de color marrón y carne comestible verde."], status: 'pending'},
 
